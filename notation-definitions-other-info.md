@@ -22,6 +22,20 @@
         - Cartesian: $\nabla^2 u = \nabla \cdot \nabla u = \frac{\partial}{\partial x} (\frac{\partial u}{\partial x}) + \frac{\partial}{\partial y} (\frac{\partial u}{\partial y}) + \frac{\partial}{\partial z} (\frac{\partial u}{\partial z})$
         - Cylindrical: $\nabla^2 u = \nabla \cdot \nabla u = \frac{1}{r}\frac{\partial}{\partial r} (r \frac{\partial u}{\partial r}) + \frac{1}{r^2} (\frac{\partial^2 u}{\partial \theta^2}) + (\frac{\partial^2 u}{\partial z^2})$
             - In many problems, it is known that the temperature or concentration <ins> does not depend on the polar angle </ins> $\underline{\theta}$, which means the problem is circularly or axially symmetric. In these cases: $\nabla^2 u = \frac{1}{r}\frac{\partial}{\partial r} (r \frac{\partial u}{\partial r}) + (\frac{\partial^2 u}{\partial z^2})$
+## Kronecker Delta
+- a function of two, usually positive, variables that follows the following rules:
+    - $\delta_{ij} = 0$ if $i \neq j$
+    - $\delta_{ij} = 1$ if $i = j$
+
+## Dirac Delta
+- denoted (written) as $\delta(x-x_i)$ where $x$ can be any independent variable
+- the Dirac delta function is like a <ins>concentrated source</ins> or a <ins>unit impusle force</ins> at $x=x_i$. It is so concentrated that integrating it with any continuous function <ins>"sifts"</ins> out the value at $x=x_i$.
+    - Important properties
+        - $\delta(x-x_i)$ equals 0 when $x \neq x_i$
+        - $\delta(x-x_i)$ equals $\infty$ when $x=x_i$
+        - $\delta(x-x_i) = \delta(x_i-x)$
+        - $\int_{-\infty}^{\infty} \delta(x-x_i) dx_i =1$
+        - <ins>Sifting property</ins>: $f(x_i) = \int_{-\infty}^{\infty} f(x) \delta(x-x_i) dx$
 
 ## Ordinary Differential Equation (ODE)
 - a differential equation containing one or more functions of <ins> one independent variable</ins> and the <ins> derivatives</ins> of those functions
@@ -62,4 +76,11 @@
             - in a more general sense: $u(r,\theta) = u(r, \theta + 2\pi)$ and $\frac{\partial u}{\partial \theta}(r,\theta) = \frac{\partial u}{\partial \theta}(r,\theta + 2\pi)$
 
 ## Homogeneity (and Inhomogeneity)
-- Homogeneity: when a boundary conditino or an initial condition <in>is equal to zero</in>. A
+- Homogeneity: when a boundary condition or an initial condition <ins>is equal to zero</ins>. A PDE with no source term is also homogeneous.
+    - Example:
+        - $\frac{\partial u}{\partial t} = K\nabla^2 u = K\biggl[\frac{1}{r} \frac{\partial}{\partial r}\big( r \frac{\partial u}{\partial r}\big) + \frac{1}{r^2} \frac{\partial^2 u}{\partial \theta^2} + \frac{\partial^2 u}{\partial z^2}\biggl]$ 
+        - $u(t,0) = 0$
+- Inhomogeneity: when a PDE, boundary condition, or an initial condition <ins>is not equal to zero</ins>.
+    - Example:
+        - $\frac{\partial u}{\partial t} = K\nabla^2 u = K\biggl[\frac{1}{r} \frac{\partial}{\partial r}\big( r \frac{\partial u}{\partial r}\big) + \frac{1}{r^2} \frac{\partial^2 u}{\partial \theta^2} + \frac{\partial^2 u}{\partial z^2}\biggl] + \phi (t,r,\theta,z)$
+        - $u(t,0) = f$
