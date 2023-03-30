@@ -10,18 +10,18 @@
 ## Domain
 - the range for the independent variables of the differential problem (in other words, the regions where the differential problem is defined)  
     - Examples:
-        - $x \in [0,L]$ where $\in$ means "is an element of" (i.e. $0 \leq x \leq L$)
+        - $x \in [0,L]$ where $\in$ means "is an element of" $\big($ i.e. $0 \leq x \leq L \big)$
         - $r \in (0,a)$ meaning $0 < r < a$ (paretheses means the end values are not included in the range for $r$)
         - $\theta \in (0,\frac{\pi}{2}]$ meaning $0 < \theta \leq \frac{\pi}{2}$  
 
 ## Laplace operator or Laplacian: $\nabla^2$
 - the <ins>divergence</ins> of the gradient of a scalar function
     - Gradient operator (del or nabla): $\nabla \equiv \frac{\partial}{\partial x} + \frac{\partial}{\partial y} + \frac{\partial}{\partial z}$ in cartesian coordinates 
-- $\nabla^2 = \nabla \cdot \nabla = \frac{\partial}{\partial x} (\frac{\partial}{\partial x}) + \frac{\partial}{\partial y} (\frac{\partial}{\partial y}) + \frac{\partial}{\partial z} (\frac{\partial}{\partial z})$ in cartesian coordinates
+- $\nabla^2 = \nabla \cdot \nabla = \frac{\partial}{\partial x} \big(\frac{\partial}{\partial x}\big) + \frac{\partial}{\partial y} \big(\frac{\partial}{\partial y}\big) + \frac{\partial}{\partial z} \big(\frac{\partial}{\partial z}\big)$ in cartesian coordinates
     - Examples: 
-        - Cartesian: $\nabla^2 u = \nabla \cdot \nabla u = \frac{\partial}{\partial x} (\frac{\partial u}{\partial x}) + \frac{\partial}{\partial y} (\frac{\partial u}{\partial y}) + \frac{\partial}{\partial z} (\frac{\partial u}{\partial z})$
-        - Cylindrical: $\nabla^2 u = \nabla \cdot \nabla u = \frac{1}{r}\frac{\partial}{\partial r} (r \frac{\partial u}{\partial r}) + \frac{1}{r^2} (\frac{\partial^2 u}{\partial \theta^2}) + (\frac{\partial^2 u}{\partial z^2})$
-            - In many problems, it is known that the temperature or concentration <ins> does not depend on the polar angle </ins> $\underline{\theta}$, which means the problem is circularly or axially symmetric. In these cases: $\nabla^2 u = \frac{1}{r}\frac{\partial}{\partial r} (r \frac{\partial u}{\partial r}) + (\frac{\partial^2 u}{\partial z^2})$
+        - Cartesian: $\nabla^2 u = \nabla \cdot \nabla u = \frac{\partial}{\partial x} \big(\frac{\partial u}{\partial x}\big) + \frac{\partial}{\partial y} \big(\frac{\partial u}{\partial y}\big) + \frac{\partial}{\partial z} \big(\frac{\partial u}{\partial z}\big)$
+        - Cylindrical: $\nabla^2 u = \nabla \cdot \nabla u = \frac{1}{r}\frac{\partial}{\partial r} \big(r \frac{\partial u}{\partial r}\big) + \frac{1}{r^2} \big(\frac{\partial^2 u}{\partial \theta^2}\big) + \big(\frac{\partial^2 u}{\partial z^2}\big)$
+            - In many problems, it is known that the temperature or concentration <ins> does not depend on the polar angle </ins> $\underline{\theta}$, which means the problem is circularly or axially symmetric. In these cases: $\nabla^2 u = \frac{1}{r}\frac{\partial}{\partial r} \big(r \frac{\partial u}{\partial r}\big) + \big(\frac{\partial^2 u}{\partial z^2}\big)$
 ## Kronecker Delta
 - a function of two, usually positive, variables that follows the following rules:
     - $\delta_{ij} = 0$ if $i \neq j$
@@ -46,9 +46,9 @@
 ## Partial Differential Equation (PDE)
 - involves <ins> two or more independent variables</ins>, an unknown function that depends on those independent variables, and <ins> partial derivatives</ins> of the unknown function with respect to the independent variables. This may also be referred to as a _Governing Equation_.
     - Examples:
-        - <ins>Heat Equation</ins> (Cartesian): $\frac{\partial u}{\partial t} = K \nabla^2u = K[\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} + \frac{\partial^2 u}{\partial z^2}]$ where $K$ is the thermal diffusivity.
+        - <ins>Heat Equation</ins> (Cartesian): $\frac{\partial u}{\partial t} = K \nabla^2u = K\biggl[\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} + \frac{\partial^2 u}{\partial z^2}\biggl]$ where $K$ is the thermal diffusivity.
             - the <ins>Heat Equation</ins> is a specific partial differential equation for temperature changes in a specified region.
-        - <ins>Diffusion Equation</ins> (Cartesian): $\frac{\partial c}{\partial t} = D \nabla^2c = D[\frac{\partial^2 c}{\partial x^2} + \frac{\partial^2 c}{\partial y^2} + \frac{\partial^2 c}{\partial z^2}]$ where $D$ is the diffusion coefficient
+        - <ins>Diffusion Equation</ins> (Cartesian): $\frac{\partial c}{\partial t} = D \nabla^2c = D\biggl[\frac{\partial^2 c}{\partial x^2} + \frac{\partial^2 c}{\partial y^2} + \frac{\partial^2 c}{\partial z^2}\biggl]$ where $D$ is the diffusion coefficient
             - the <ins>Diffusion Equation</ins> is a specific partial differential equation that describes the concentration of a quantity of interest in a specified region.
         - <ins>Wave Equation</ins> (second order PDE): $\frac{\partial^2 u}{\partial t^2} = c^2 \frac{\partial^2 u}{\partial z^2}$ 
 
@@ -74,6 +74,10 @@
             - at the $x=L$ boundary: $\left.\frac{k}{h} \frac{\partial u}{\partial x}\right|_ {x=L} + u = f$
         - Periodic: $u(r,-\pi) = u(r,\pi)$ and $\frac{\partial u}{\partial \theta}(r,-\pi) = \frac{\partial u}{\partial \theta}(r,\pi)$
             - in a more general sense: $u(r,\theta) = u(r, \theta + 2\pi)$ and $\frac{\partial u}{\partial \theta}(r,\theta) = \frac{\partial u}{\partial \theta}(r,\theta + 2\pi)$
+## Steady State
+- A system is at steady state when there is <ins>no dependence on time</ins> (in other words, when the time derivative is equal to zero)
+    - Example:
+        - $\frac{\partial c}{\partial t} = D\biggl[\frac{\partial^2 c}{\partial x^2} + \frac{\partial^2 c}{\partial y^2} + \frac{\partial^2 c}{\partial z^2}\biggl] = 0$
 
 ## Homogeneity (and Inhomogeneity)
 - Homogeneity: when a boundary condition or an initial condition <ins>is equal to zero</ins>. A PDE with no source term is also homogeneous.
