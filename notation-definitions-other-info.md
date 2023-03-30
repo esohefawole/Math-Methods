@@ -56,10 +56,10 @@
         - Dirichlet: $u(t,0) = f$
         - Neumann: $\frac{\partial u}{\partial x} = f$
         - Robin: $\frac{k}{n}(\underline{n} \cdot \underline{\nabla}u + u = f)$ where $h$ is the heat transfer coefficient, $k$ is the thermal conductivity, and $\underline{n}$ is the normal vector which changes the sign of the boundary condition depending on which boundary is the focus.
-            - at the $x=0$ boundary: $- \left.\frac{k}{h} \frac{\partial u}{\partial x}\right|_{x=0} + u = f$
-            - at the $x=L$ boundary: $ \left.\frac{k}{h} \frac{\partial u}{\partial x}\right|_{x=L} + u = f$
+            - at the $x=0$ boundary: $- \left.\frac{k}{h} \frac{\partial u}{\partial x}\right|_ {x=0} + u = f$
+            - at the $x=L$ boundary: $\left.\frac{k}{h} \frac{\partial u}{\partial x}\right|_ {x=L} + u = f$
         - Periodic: $u(r,-\pi) = u(r,\pi)$ and $\frac{\partial u}{\partial \theta}(r,-\pi) = \frac{\partial u}{\partial \theta}(r,\pi)$
             - in a more general sense: $u(r,\theta) = u(r, \theta + 2\pi)$ and $\frac{\partial u}{\partial \theta}(r,\theta) = \frac{\partial u}{\partial \theta}(r,\theta + 2\pi)$
 
 ## Homogeneity (and Inhomogeneity)
-- Homogeneity: when a boundary conditino or an initial condition <in>is equal to zero</in>. A
+- Homogeneity: when a boundary condition or an initial condition <ins>is equal to zero</ins>. A
