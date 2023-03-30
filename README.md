@@ -1,1 +1,1 @@
-# Math-Methods
+Mathematical methods for chemical engineers
