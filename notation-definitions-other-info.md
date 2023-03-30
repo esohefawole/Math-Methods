@@ -57,7 +57,7 @@
     - Examples:
         - $u(0,z) = 0$ (homogeneous)
         - $c(0,r,\theta,z) = c_o$ (inhomogeneous)
-        - Piece-wise condition: In the domain $x \in [0,L]$
+        - Piece-wise condition: In the domain $x \in [0,L]$k
             - $u(0,x) = 
                 \begin{cases} 
                     0 &0 \leq x \leq \frac{L}{2}\\\
