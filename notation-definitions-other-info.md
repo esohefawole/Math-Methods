@@ -37,3 +37,29 @@
         - <ins>Diffusion Equation</ins> (Cartesian): $\frac{\partial c}{\partial t} = D \nabla^2c = D[\frac{\partial^2 c}{\partial x^2} + \frac{\partial^2 c}{\partial y^2} + \frac{\partial^2 c}{\partial z^2}]$ where $D$ is the diffusion coefficient
             - the <ins>Diffusion Equation</ins> is a specific partial differential equation that describes the concentration of a quantity of interest in a specified region.
         - <ins>Wave Equation</ins> (second order PDE): $\frac{\partial^2 u}{\partial t^2} = c^2 \frac{\partial^2 u}{\partial z^2}$ 
+
+## Initial Condition
+- the condition when $t=0$. This condition can be across all domains of the problem or in specific portions of the domain (like piece-wise functions)
+    - Examples:
+        - $u(0,z) = 0$ (homogeneous)
+        - $c(0,r,\theta,z) = c_o$ (inhomogeneous)
+        - Piece-wise condition: In the domain $x \in [0,L]$
+            - $u(0,x) = 
+                \begin{cases} 
+                    0 &0 \leq x \leq \frac{L}{2}\\\
+                    T_1 &\frac{L}{2} \leq x \leq L
+                \end{cases}$ 
+
+## Boundary Conditions
+- conditions at the spatial boundaries of the problem (here, $f$ can equal 0, a constant, or a function)
+    - Examples:
+        - Dirichlet: $u(t,0) = f$
+        - Neumann: $\frac{\partial u}{\partial x} = f$
+        - Robin: $\frac{k}{n}(\underline{n} \cdot \underline{\nabla}u + u = f)$ where $h$ is the heat transfer coefficient, $k$ is the thermal conductivity, and $\underline{n}$ is the normal vector which changes the sign of the boundary condition depending on which boundary is the focus.
+            - at the $x=0$ boundary: $- \left.\frac{k}{h} \frac{\partial u}{\partial x}\right|_{x=0} + u = f$
+            - at the $x=L$ boundary: $ \left.\frac{k}{h} \frac{\partial u}{\partial x}\right|_{x=L} + u = f$
+        - Periodic: $u(r,-\pi) = u(r,\pi)$ and $\frac{\partial u}{\partial \theta}(r,-\pi) = \frac{\partial u}{\partial \theta}(r,\pi)$
+            - in a more general sense: $u(r,\theta) = u(r, \theta + 2\pi)$ and $\frac{\partial u}{\partial \theta}(r,\theta) = \frac{\partial u}{\partial \theta}(r,\theta + 2\pi)$
+
+## Homogeneity (and Inhomogeneity)
+- Homogeneity: when a boundary conditino or an initial condition <in>is equal to zero</in>. A
